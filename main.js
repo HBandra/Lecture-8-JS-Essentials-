@@ -1,15 +1,16 @@
 // 1.Build a function that does currency converter from USD to UAH (1 USD = 8 UAH).
 
 function convert(G) {
-	console.log(G * 8);
+	const UAN = 8;
+	let sum = G * UAN;
+	return sum;
 }
 convert(2);
 
 // 2. A function which returns reversed string
 
 function reverseStr(str) {
-	let newStr = '',
-		i;
+	let newStr = '';
 	for (i = str.length - 1; i >= 0; i--) {
 		newStr += str.charAt(i);
 	}
@@ -35,7 +36,6 @@ function printStairs(n) {
 }
 printStairs(3);
 
-
 // 4. A function which returns total sum of a range alert
 
 function sumRange(start, end) {
@@ -44,16 +44,17 @@ function sumRange(start, end) {
 	let sum = 0;
 	for (let i = a; i <= b; i++) {
 		sum += i;
-	}
+			}
 	console.log(sum);
+	return sum;
 }
 sumRange(2, 4);
 sumRange(-1, 3);
- 
+
 // 5.Write a function which returns the smallest of three numbers
 
 function min(a, b, c) {
-	let min = Math.min(a, b, c);
+	const min = Math.min(a, b, c);
 	console.log(min);
 }
 min(10, 5, 11);
@@ -84,6 +85,7 @@ function firstAndLastToUpper(str) {
 	let newWord = firstLetter.toUpperCase() + middle + lastLetter.toUpperCase();
 
 	console.log(newWord);
+	return newWord;
 }
 firstAndLastToUpper("abc");
 
@@ -99,8 +101,15 @@ console.log(cursorCheck('Superman is here'));
 //9. A function which returns a string with all letters in uppercase (without built in string’s method). The function supports only english alphabet.
 
 function toUppercase(str) {
-
-	console.log(str.toLocaleUpperCase());
+	let strSplit = str.split('');
+	let res = strSplit.map(function (item) {
+		if ((item.charCodeAt(0)) >= 97 && item.charCodeAt(0) <= 122) {
+			return String.fromCharCode(item.charCodeAt(0) - 32)
+		} else {
+			return item;
+		}
+	}).join("")
+	console.log(res);
 }
 toUppercase('abc');
 
@@ -111,8 +120,10 @@ function removeDuplicationLetters(str) {
 	for (let i = 1; i < str.length; i++) {
 		let isExist = rst.search(str.charAt(i));
 		isExist >= 0 ? 0 : (rst += str.charAt(i));
+		return rst;
 	}
 	console.log(rst);
+	return rst;
 }
 removeDuplicationLetters('Hello I am Iron Man')
 
@@ -128,4 +139,11 @@ function fibonacci(n) {
 console.log(fibonacci(3));
 console.log(fibonacci(5));
 console.log(fibonacci(7));
+
+
+
+
+
+
+
 
