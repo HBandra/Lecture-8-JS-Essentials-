@@ -2,7 +2,7 @@
 
 function convert(G) {
 	const UAN = 8;
-	let sum = G * UAN;
+	const sum = G * UAN;
 	return sum;
 }
 convert(2);
@@ -110,6 +110,7 @@ function toUppercase(str) {
 		}
 	}).join("")
 	console.log(res);
+	return res;
 }
 toUppercase('abc');
 
